@@ -1,0 +1,60 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+!.vscode/extensions.json
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.flake8
+
+# Python packaging
+*.egg-info/
+dist/
+build/
+
+# Node / Frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+.vite/
+
+# Frontend testing
+coverage/
+
+# Docker
+docker-data/
+postgres-data/
+pgdata/
+
+# Database
+*.sqlite3
+*.db
+
+# Logs
+*.log
+
+# API / Generated files
+openapi.json
+
+# Misc
+*.swp
+*.swo
