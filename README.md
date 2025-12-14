@@ -1,12 +1,14 @@
-# MCAT Access Platform                        Project Board: https://github.com/ehhurst/mcat-app/projects
+# MCAT Access Platform                        
 
 A mission-driven, full-stack web platform designed to help **low-income and underrepresented premedical students** prepare for the MCAT through personalized study planning, free practice questions, and data-driven feedback.
 
 This project focuses on **equity in the medical pipeline**, leveraging modern software engineering practices to reduce barriers to entry for students pursuing careers in healthcare.
 
 ---
+Project Board: https://github.com/ehhurst/mcat-app/projects
+---
 
-## Getting Started (Local Development)
+## Getting Started (development)
 
 ### Prerequisites
 
