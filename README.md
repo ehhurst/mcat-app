@@ -10,6 +10,50 @@ Project Board: https://github.com/ehhurst/mcat-app/projects
 
 ---
 
+## Getting Started (Local Development)
+
+### Prerequisites
+
+- Docker & Docker Compose
+- Node.js (18+)
+- Python 3.11+
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/ehhurst/mcat-app.git
+cd mcat-app
+```
+
+## Running locally
+
+1. Copy `.env.example` to `.env` and fill values
+2. Run `docker compose up --build`
+3. Open http://localhost:5173
+
+### Testing
+
+Server
+
+```
+docker compose exec api pytest
+```
+
+Client
+
+```
+cd client
+npm test
+```
+
+End-to-End (optional)
+
+```
+npm run e2e
+```
+
+---
+
 ## Motivation
 
 Preparing for the MCAT is expensive and time-consuming, with many students priced out of traditional prep resources. This platform aims to provide:
@@ -165,45 +209,3 @@ Future work would include encryption at rest, audit trails, and compliance workf
 
 - [Product Vision](docs/product-vision.md)
 - [Product Plan](docs/product-plan.md)
-
-## ⚙️ Getting Started (Local Development)
-
-### Prerequisites
-
-- Docker & Docker Compose
-- Node.js (18+)
-- Python 3.11+
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/ehhurst/mcat-app.git
-cd mcat-app
-```
-
-## Running locally
-
-1. Copy `.env.example` to `.env` and fill values
-2. Run `docker compose up --build`
-3. Open http://localhost:5173
-
-### Testing
-
-Server
-
-```
-docker compose exec api pytest
-```
-
-Client
-
-```
-cd client
-npm test
-```
-
-End-to-End (optional)
-
-```
-npm run e2e
-```
