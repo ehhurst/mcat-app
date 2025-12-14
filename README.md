@@ -1,12 +1,12 @@
-# MCAT Platform                        
+# MCAT Platform
 
 A mission-driven, full-stack web platform designed to help **low-income and underrepresented premedical students** prepare for the MCAT through personalized study planning, free practice questions, and data-driven feedback.
 
 This project focuses on **equity in the medical pipeline**, leveraging modern software engineering practices to reduce barriers to entry for students pursuing careers in healthcare.
 
 ---
-Project Board: https://github.com/ehhurst/mcat-app/projects
----
+
+## Project Board: https://github.com/ehhurst/mcat-app/projects
 
 ## Getting Started (development)
 
@@ -131,61 +131,17 @@ docs/
 server/ # FastAPI application
 ├── Dockerfile
 ├── requirements.txt
-├── alembic.ini
-├── alembic/
-│ ├── env.py
-│ ├── script.py.mako
-│ └── versions/
 ├── app/
 │ ├── **init**.py
 │ ├── main.py
 │ ├── api/# Route definitions
-│ │ ├── **init**.py
-│ │ ├── deps.py
-│ │ └── v1/
-│ │ ├── **init**.py
-│ │ ├── auth.py
-│ │ ├── users.py
-│ │ ├── resources.py
-│ │ ├── planning.py
-│ │ ├── analytics.py
-│ │ └── recommendations.py
 │ ├── core/ # Auth, config, dependencies
-│ │ ├── **init**.py
-│ │ ├── config.py
-│ │ ├── security.py
-│ │ └── logging.py
 │ ├── db/
-│ │ ├── **init**.py
-│ │ ├── base.py
-│ │ ├── session.py
-│ │ └── init_db.py
 │ ├── models/# SQLAlchemy ORM models
-│ │ ├── **init**.py
-│ │ ├── user.py
-│ │ ├── resource.py
-│ │ ├── plan.py
-│ │ └── attempt.py
 │ ├── schemas/ # Pydantic request/response schemas
-│ │ ├── **init**.py
-│ │ ├── auth.py
-│ │ ├── user.py
-│ │ ├── resource.py
-│ │ ├── plan.py
-│ │ └── analytics.py
 │ ├── services/ # Business logic (planning, recommendations)
-│ │ ├── **init**.py
-│ │ ├── planning_engine.py
-│ │ ├── recommendation_engine.py
-│ │ └── scheduling.py
 │ └── utils/
-│ ├── **init**.py
-│ └── time.py
 └── tests/ # Unit & integration tests
-├── **init**.py
-├── conftest.py
-├── test_healthz.py
-└── test_auth.py
 docker-compose.yml
 .gitignore
 LICENSE
