@@ -1,4 +1,4 @@
-# MCAT Access Platform                        
+# MCAT Platform                        
 
 A mission-driven, full-stack web platform designed to help **low-income and underrepresented premedical students** prepare for the MCAT through personalized study planning, free practice questions, and data-driven feedback.
 
