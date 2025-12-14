@@ -24,6 +24,7 @@ Preparing for the MCAT is expensive and time-consuming, with many students price
 ## Features
 
 ### Personalized Study Planning
+
 - Generate study schedules based on:
   - Target MCAT date
   - Weekly availability
@@ -31,16 +32,19 @@ Preparing for the MCAT is expensive and time-consuming, with many students price
 - Prioritizes high-impact topics under time constraints
 
 ### Practice Question Bank
+
 - Original MCAT-style practice questions
 - Tagged by section, topic, and difficulty
 - Detailed explanations after submission
 
 ### Progress & Analytics Dashboard
+
 - Accuracy by section and topic
 - Time-on-task vs. performance insights
 - Visual trend analysis to track improvement over time
 
 ### Smart Recommendations Engine
+
 - Suggests “what to study next” using:
   - Accuracy decay
   - Time since last review
@@ -48,6 +52,7 @@ Preparing for the MCAT is expensive and time-consuming, with many students price
 - Fully explainable and tunable scoring model
 
 ### Accessibility & Equity-First Design
+
 - Mobile-first UI
 - Dark mode
 - Low-bandwidth friendly
@@ -58,77 +63,91 @@ Preparing for the MCAT is expensive and time-consuming, with many students price
 
 ## Tech Stack
 
-| Layer | Technology |
-|------|------------|
-| Frontend | React, TypeScript, Vite, TailwindCSS |
-| Backend | FastAPI (Python 3.11) |
-| Database | PostgreSQL |
-| Auth | JWT (Access + Refresh Tokens) |
-| Analytics | Pandas, SQL |
-| Charts | Recharts / Chart.js |
-| DevOps | Docker, GitHub Actions |
-| Deployment | Fly.io / Railway |
+| Layer      | Technology                           |
+| ---------- | ------------------------------------ |
+| Client     | React, TypeScript, Vite, TailwindCSS |
+| Server     | FastAPI (Python 3.11)                |
+| Database   | PostgreSQL                           |
+| Auth       | JWT (Access + Refresh Tokens)        |
+| Analytics  | Pandas, SQL                          |
+| Charts     | Recharts / Chart.js                  |
+| DevOps     | Docker, GitHub Actions               |
+| Deployment | Fly.io / Railway                     |
 
 ---
 
 ## Architecture Overview
-frontend/ # React + TypeScript client
-backend/ # FastAPI application
-├── api/ # Route definitions
-├── models/ # SQLAlchemy ORM models
-├── schemas/ # Pydantic request/response schemas
-├── services/ # Business logic (planning, recommendations)
-├── core/ # Auth, config, dependencies
-├── tests/ # Unit & integration tests
-└── main.py
+
+client/ # React + TypeScript client
+├── node_modules/
+├── public/
+├── src/
+└── Dockerfile
+docs/
+├── product-plan.md
+└── product-vision.md
+server/ # FastAPI application
+├── Dockerfile
+├── requirements.txt
+├── alembic.ini
+├── alembic/
+│ ├── env.py
+│ ├── script.py.mako
+│ └── versions/
+├── app/
+│ ├── **init**.py
+│ ├── main.py
+│ ├── api/# Route definitions
+│ │ ├── **init**.py
+│ │ ├── deps.py
+│ │ └── v1/
+│ │ ├── **init**.py
+│ │ ├── auth.py
+│ │ ├── users.py
+│ │ ├── resources.py
+│ │ ├── planning.py
+│ │ ├── analytics.py
+│ │ └── recommendations.py
+│ ├── core/ # Auth, config, dependencies
+│ │ ├── **init**.py
+│ │ ├── config.py
+│ │ ├── security.py
+│ │ └── logging.py
+│ ├── db/
+│ │ ├── **init**.py
+│ │ ├── base.py
+│ │ ├── session.py
+│ │ └── init_db.py
+│ ├── models/# SQLAlchemy ORM models
+│ │ ├── **init**.py
+│ │ ├── user.py
+│ │ ├── resource.py
+│ │ ├── plan.py
+│ │ └── attempt.py
+│ ├── schemas/ # Pydantic request/response schemas
+│ │ ├── **init**.py
+│ │ ├── auth.py
+│ │ ├── user.py
+│ │ ├── resource.py
+│ │ ├── plan.py
+│ │ └── analytics.py
+│ ├── services/ # Business logic (planning, recommendations)
+│ │ ├── **init**.py
+│ │ ├── planning_engine.py
+│ │ ├── recommendation_engine.py
+│ │ └── scheduling.py
+│ └── utils/
+│ ├── **init**.py
+│ └── time.py
+└── tests/ # Unit & integration tests
+├── **init**.py
+├── conftest.py
+├── test_healthz.py
+└── test_auth.py
 docker-compose.yml
-
-
----
-
-## ⚙️ Getting Started (Local Development)
-
-### Prerequisites
-- Docker & Docker Compose
-- Node.js (18+)
-- Python 3.11+
-
-### Clone the Repository
-```bash
-git clone https://github.com/ehhurst/mcat-app.git
-cd mcat-app
-```
-Environment Variables
-
-Create a .env file:
-```
-DATABASE_URL=postgresql+psycopg://user:pass@db:5432/mcat
-JWT_SECRET=dev_secret_key
-JWT_EXPIRE_MIN=15
-REFRESH_EXPIRE_MIN=43200
-APP_ENV=dev
-```
-### Run the app
-```
-docker compose up --build
-```
-
-### Testing
-Backend
-```
-docker compose exec api pytest
-```
-
-Frontend
-```
-cd frontend
-npm test
-```
-
-End-to-End (optional)
-```
-npm run e2e
-```
+.gitignore
+LICENSE
+README.md
 
 ## Security & Data Ethics
 
@@ -142,8 +161,49 @@ Not HIPAA-compliant (educational/portfolio project)
 
 Future work would include encryption at rest, audit trails, and compliance workflows.
 
- 
 ## Documentation:
+
 - [Product Vision](docs/product-vision.md)
 - [Product Plan](docs/product-plan.md)
 
+## ⚙️ Getting Started (Local Development)
+
+### Prerequisites
+
+- Docker & Docker Compose
+- Node.js (18+)
+- Python 3.11+
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/ehhurst/mcat-app.git
+cd mcat-app
+```
+
+## Running locally
+
+1. Copy `.env.example` to `.env` and fill values
+2. Run `docker compose up --build`
+3. Open http://localhost:5173
+
+### Testing
+
+Server
+
+```
+docker compose exec api pytest
+```
+
+Client
+
+```
+cd client
+npm test
+```
+
+End-to-End (optional)
+
+```
+npm run e2e
+```
