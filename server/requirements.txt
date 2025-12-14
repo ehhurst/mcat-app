@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+
+# Database
+sqlalchemy
+psycopg[binary]
+
+# Auth / security
+python-jose[cryptography]
+passlib[bcrypt]
+
+# Settings
+pydantic
+python-dotenv
+
+# Migrations (Sprint 0 setup, used Sprint 1)
+alembic
