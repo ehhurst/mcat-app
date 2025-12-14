@@ -6,6 +6,10 @@ This project focuses on **equity in the medical pipeline**, leveraging modern so
 
 ---
 
+Project Board: https://github.com/ehhurst/mcat-app/projects
+
+---
+
 ## Motivation
 
 Preparing for the MCAT is expensive and time-consuming, with many students priced out of traditional prep resources. This platform aims to provide:
