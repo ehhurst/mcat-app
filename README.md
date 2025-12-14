@@ -137,3 +137,9 @@ Uses synthetic data only
 Not HIPAA-compliant (educational/portfolio project)
 
 Future work would include encryption at rest, audit trails, and compliance workflows.
+
+ 
+## Documentation:
+- [Product Vision](docs/product-vision.md)
+- [Product Plan](docs/product-plan.md)
+
