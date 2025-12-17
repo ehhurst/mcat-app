@@ -1,12 +1,9 @@
 # Requirements Tracability Matrix (RTM)
 
----
-- [ ]
-## 1. Functional Requirements Traceability
-
+### 1. Functional Requirements Traceability
 | Req ID | Requirement Summary             | GitHub Issue(s)                              | Sprint   | Complete? |
 | ------ | ------------------------------- | -------------------------------------------- | -------- | --------- |
-| FR-1   | User registration               | Backend: Authentication (JWT access/refresh) | Sprint 1 | - [ ]     |
+| FR-1   | User registration               | Backend: Authentication (JWT access/refresh) | Sprint 1 | [ ]       |
 | FR-2   | User login/logout               | Backend: Authentication (JWT access/refresh) | Sprint 1 | [ ]       |
 | FR-3   | Password hashing                | Backend: Authentication (JWT access/refresh) | Sprint 1 | [ ]       |
 | FR-4   | JWT access + refresh tokens     | Backend: Authentication (JWT access/refresh) | Sprint 1 | [ ]       |
@@ -29,8 +26,7 @@
 
 ---
 
-## 2. Non-Functional Requirements Traceability
-
+### 2. Non-Functional Requirements Traceability
 | Req ID | Requirement Summary           | GitHub Issue(s)                                             | Sprint   | Complete? |
 | ------ | ----------------------------- | ----------------------------------------------------------- | -------- | --------- |
 | NFR-1  | Simple, focused UI            | Client: Study planner UI with drag-and-drop                 | Sprint 2 | [ ]       |
@@ -50,8 +46,7 @@
 
 ---
 
-## 3. Sprint Coverage Summary
-
+### 3. Sprint Coverage Summary
 | Sprint   | Covered Requirement Areas                               | Complete? |
 | -------- | ------------------------------------------------------- | --------- |
 | Sprint 0 | Infrastructure, config, health, dev experience          | [ ]       |
