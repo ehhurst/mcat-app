@@ -1,116 +1,84 @@
-MCAT Access Platform
-Software Requirements Document (SRD)
+# MCAT Access Platform
+## Software Requirements Document (SRD)
 
-Project Name (Working): MCAT Access Platform
-Repository: ehhurst/mcat-app
-Document Version: 1.0
-Last Updated: (today)
+#### Project Name: MCAT Platform
+#### Repository: ehhurst/mcat-app
+#### Document Version: 1.0
+#### Last Updated: (today)
 
-1. Purpose
-
+## 1. Purpose
 The purpose of the MCAT Access Platform is to provide low-income and underrepresented premedical students with a flexible, resource-agnostic study planning system that helps them prepare for the MCAT using materials they already have access to.
 
 The platform focuses on:
-
-personalized study planning
-
-schedule flexibility
-
-integration of user-chosen study resources
-
-reducing reliance on expensive, rigid prep programs
+- personalized study planning
+- schedule flexibility
+- integration of user-chosen study resources
+- reducing reliance on expensive, rigid prep programs
 
 This document defines the functional and non-functional requirements for the system.
 
-2. Scope
-   In Scope
 
-Web-based client application
+## 2. Scope
+In Scope:
+- Web-based client application
+- Server-side API and business logic
+- User authentication and persistence
+- Study plan generation and modification
+- Custom resource integration
+- Drag-and-drop schedule management
 
-Server-side API and business logic
+Out of Scope (for initial releases):
+- Native mobile applications
+- Payment processing
+- Partnerships with prep companies
+- Automated content scraping from proprietary platforms
 
-User authentication and persistence
 
-Study plan generation and modification
+## 3. Users & Personas
+* 3.1 Primary User: MCAT Student
+   - Preparing for the MCAT
+   - Often balancing school, work, family, or caregiving responsibilities
+   - Uses a mix of free and paid resources (e.g., Kaplan books, Jack Westin, Blueprint videos, Anki)
+   - Needs flexibility when plans change
 
-Custom resource integration
+* 3.2 Secondary User: Developer / Contributor
+   - Runs the system locally
+   - Contributes features or fixes
+   - Needs clear setup, testing, and documentation
 
-Drag-and-drop schedule management
 
-Out of Scope (for initial releases)
-
-Native mobile applications
-
-Payment processing
-
-Official partnerships with prep companies
-
-Automated content scraping from proprietary platforms
-
-3. Users & Personas
-   3.1 Primary User: MCAT Student
-
-Preparing for the MCAT
-
-Often balancing school, work, family, or caregiving responsibilities
-
-Uses a mix of free and paid resources (e.g., Kaplan books, Jack Westin, Blueprint videos, Anki)
-
-Needs flexibility when plans change
-
-3.2 Secondary User: Developer / Contributor
-
-Runs the system locally
-
-Contributes features or fixes
-
-Needs clear setup, testing, and documentation
-
-4. System Architecture Overview
-
+## 4. System Architecture Overview
 The system follows a client–server architecture:
-
-Client: React + TypeScript web application
-
-Server: FastAPI (Python) REST API
-
-Database: PostgreSQL
-
-Infrastructure: Docker Compose for local development
+   * Client: React + TypeScript web application
+   * Server: FastAPI (Python) REST API
+   * Database: PostgreSQL
+   * Infrastructure: Docker Compose for local development
 
 All components must be runnable locally with a single command.
 
-5. Functional Requirements
-   5.1 User Accounts & Authentication
+## 5. Functional Requirements
+* 5.1 User Accounts & Authentication
+   - FR-1 The system shall allow users to register with email and password.
+   - FR-2 The system shall allow users to log in and log out securely.
+   - FR-3 The system shall use hashed passwords and JWT-based authentication.
+   - FR-4 The system shall support access tokens and refresh tokens.
+   - FR-5 Protected endpoints shall require authentication.
 
-FR-1 The system shall allow users to register with email and password.
-FR-2 The system shall allow users to log in and log out securely.
-FR-3 The system shall use hashed passwords and JWT-based authentication.
-FR-4 The system shall support access tokens and refresh tokens.
-FR-5 Protected endpoints shall require authentication.
+* 5.2 Study Resource Management
+   - FR-6 Users shall be able to add custom study resources.
+   - FR-7 Resources shall be user-defined and platform-agnostic (e.g., Kaplan, Jack Westin, Blueprint, Anki).
+   - FR-8 Resources shall be taggable by MCAT topic and section (e.g., CARS, Bio/Biochem).
+   - FR-9 Users shall be able to edit or remove their resources.
 
-5.2 Study Resource Management
-
-FR-6 Users shall be able to add custom study resources.
-FR-7 Resources shall be user-defined and platform-agnostic (e.g., Kaplan, Jack Westin, Blueprint, Anki).
-FR-8 Resources shall be taggable by MCAT topic and section (e.g., CARS, Bio/Biochem).
-FR-9 Users shall be able to edit or remove their resources.
-
-5.3 Study Planning Engine
-
-FR-10 The system shall generate a study plan based on:
-
-MCAT exam date
-
-Weekly availability
-
-Selected topics
-
-Selected resources
-
-FR-11 Study plans shall be deterministic given the same inputs.
-FR-12 Study plans shall be stored persistently.
-FR-13 Plans shall consist of individual scheduled study tasks.
+* 5.3 Study Planning Engine
+   - FR-10 The system shall generate a study plan based on:
+      - MCAT exam date
+      - Weekly availability
+      - Selected topics
+      - Selected resources
+   - FR-11 Study plans shall be deterministic given the same inputs.
+   - FR-12 Study plans shall be stored persistently.
+   - FR-13 Plans shall consist of individual scheduled study tasks.
 
 5.4 Scheduling & Flexibility
 
