@@ -31,13 +31,19 @@ cd mcat-app
 
 ### Testing
 
-Server
+Start docker container:
 
 ```
-docker compose exec api pytest
+docker compose up --build -d
 ```
 
-Client
+Start Server Tests:
+
+```
+docker compose exec server pytest
+```
+
+Start Client Tests:
 
 ```
 cd client
