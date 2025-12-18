@@ -15,3 +15,7 @@ python-dotenv
 
 # Migrations (Sprint 0 setup, used Sprint 1)
 alembic
+
+# Testing
+pytest
+httpx
