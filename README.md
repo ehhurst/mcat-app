@@ -44,6 +44,10 @@ Update values in .env if needed (defaults work for local development).
 From the repository root, run:
 
 ```
+docker compose up --build
+```
+or
+```
 docker compose up --build -d
 ```
 
