@@ -1,6 +1,6 @@
 # MCAT Platform
 
-A mission-driven, full-stack web platform designed to help **low-income and underrepresented premedical students** prepare for the MCAT through personalized study planning, free practice questions, and data-driven feedback.
+A full-stack web platform designed to help **low-income and underrepresented premedical students** prepare for the MCAT through personalized study planning, free practice questions, and data-driven feedback.
 
 This project focuses on **equity in the medical pipeline**, leveraging modern software engineering practices to reduce barriers to entry for students pursuing careers in healthcare.
 
@@ -10,23 +10,25 @@ This project focuses on **equity in the medical pipeline**, leveraging modern so
 
 ## Getting Started (Local Development)
 
-This project uses Docker Compose to provide a consistent local development environment for the client, server, and database.
+This project uses Docker Compose to provide a consistent local development environment.
 
-Prerequisites
 Make sure you have the following installed:
-
 - Docker Desktop
 - Docker Compose (included with Docker Desktop)
 - Git
 
-1. Clone the repository
+
+### 1. Clone the repository
 
 ```
 git clone https://github.com/ehhurst/mcat-app.git
+```
+```
 cd mcat-app
 ```
 
-2. Environment variables
+
+### 2. Environment variables
 
 This project uses environment variables for configuration.
 Copy the example environment file:
@@ -37,80 +39,69 @@ cp .env.example .env
 
 Update values in .env if needed (defaults work for local development).
 
-3. Start the development environment
+### 3. Start the development environment
 
 From the repository root, run:
 
 ```
 docker compose up --build
 ```
+or
+```
+docker compose up --build -d
+```
 
 This will start:
-
-PostgreSQL database
-FastAPI server
-React (Vite) client
+* PostgreSQL database
+* FastAPI server
+* React (Vite) client
 
 The first build may take a few minutes.
 
-4. Access the application
+
+### 4. Access the application
 
 Once running:
-Client: http://localhost:5173
-Server API: http://localhost:8000
-Server health check: http://localhost:8000/healthz
-API version ping: http://localhost:8000/api/v1/ping
+- Client: http://localhost:5173
+- Server API: http://localhost:8000
+- Server health check: http://localhost:8000/healthz
+- API version ping: http://localhost:8000/api/v1/ping
 
 If all services are running, you should see JSON responses from the health and ping endpoints.
 
-5. Running tests
-   Tests are executed inside the server container.
+### 5. Running tests
+Tests are executed inside the server container.
 
 After starting the Docker container as per above, run:
 
+#### Server Tests:
 ```
 docker compose exec server pytest
 ```
 
 Expected output:
-
 ```
 1 passed
 ```
 
-6. Stopping the environment
-
-To stop the containers:
-
-```
-docker compose down
-```
-
-### Testing
-
-Start docker container:
-
-```
-docker compose up --build -d
-```
-
-Start Server Tests:
-
-```
-docker compose exec server pytest
-```
-
-Start Client Tests:
-
+#### Client Tests:
 ```
 cd client
 npm test
 ```
 
-End-to-End (optional)
-
+#### End-to-End (optional):
 ```
 npm run e2e
+```
+
+
+### 6. Stopping the environment
+
+To stop the containers:
+
+```
+docker compose down
 ```
 
 ---
