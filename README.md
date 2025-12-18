@@ -10,11 +10,9 @@ This project focuses on **equity in the medical pipeline**, leveraging modern so
 
 ## Getting Started (Local Development)
 
-This project uses Docker Compose to provide a consistent local development environment for the client, server, and database.
+This project uses Docker Compose to provide a consistent local development environment.
 
-Prerequisites
 Make sure you have the following installed:
-
 - Docker Desktop
 - Docker Compose (included with Docker Desktop)
 - Git
