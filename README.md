@@ -4,13 +4,11 @@ A full-stack web platform designed to help **low-income and underrepresented pre
 
 This project focuses on **equity in the medical pipeline**, leveraging modern software engineering practices to reduce barriers to entry for students pursuing careers in healthcare.
 
----
+### Project Board: https://github.com/ehhurst/mcat-app/projects
 
-## Project Board: https://github.com/ehhurst/mcat-app/projects
+### Documentation:
 
-## Documentation:
-
-- [Product Vision](docs/product-vision.md)
+- [Vision Statement](docs/product-vision.md)
 - [Product Plan](docs/product-plan.md)
 - [Requirements Doc](docs/requirements.md)
 - [Requirements Tracability Matrix](docs/requirements-tracability-matrix.md)
