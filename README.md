@@ -82,32 +82,43 @@ Preparing for the MCAT is expensive and time-consuming, with many students price
 
 ## Architecture Overview
 
-client/ # React + TypeScript client
+```text
+client/                     # React + TypeScript client
 ├── node_modules/
 ├── public/
 ├── src/
 └── Dockerfile
+
 docs/
 ├── product-plan.md
-└── product-vision.md
-server/ # FastAPI application
+├── product-vision.md
+├── requirements.md
+└── requirements-tracability-matrix.md
+
+server/                     # FastAPI application
 ├── Dockerfile
 ├── requirements.txt
+├── alembic.ini
+├── Alembic/
 ├── app/
-│ ├── **init**.py
-│ ├── main.py
-│ ├── api/# Route definitions
-│ ├── core/ # Auth, config, dependencies
-│ ├── db/
-│ ├── models/# SQLAlchemy ORM models
-│ ├── schemas/ # Pydantic request/response schemas
-│ ├── services/ # Business logic (planning, recommendations)
-│ └── utils/
-└── tests/ # Unit & integration tests
+│   ├── __init__.py
+│   ├── main.py
+│   ├── api/                # Route definitions
+│   ├── core/               # Auth, config, dependencies
+│   ├── db/
+│   ├── models/             # SQLAlchemy ORM models
+│   ├── schemas/            # Pydantic request/response schemas
+│   ├── services/           # Business logic (planning, recommendations)
+│   └── utils/
+└── tests/                  # Unit & integration tests
+
 docker-compose.yml
+.env.example
 .gitignore
 LICENSE
 README.md
+```
+
 
 ## Security & Data Ethics
 
