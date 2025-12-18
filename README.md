@@ -8,102 +8,12 @@ This project focuses on **equity in the medical pipeline**, leveraging modern so
 
 ## Project Board: https://github.com/ehhurst/mcat-app/projects
 
-## Getting Started (Local Development)
+## Documentation:
 
-This project uses Docker Compose to provide a consistent local development environment.
-
-Make sure you have the following installed:
-- Docker Desktop
-- Docker Compose (included with Docker Desktop)
-- Git
-
-
-### 1. Clone the repository
-
-```
-git clone https://github.com/ehhurst/mcat-app.git
-```
-```
-cd mcat-app
-```
-
-
-### 2. Environment variables
-
-This project uses environment variables for configuration.
-Copy the example environment file:
-
-```
-cp .env.example .env
-```
-
-Update values in .env if needed (defaults work for local development).
-
-### 3. Start the development environment
-
-From the repository root, run:
-
-```
-docker compose up --build
-```
-or
-```
-docker compose up --build -d
-```
-
-This will start:
-* PostgreSQL database
-* FastAPI server
-* React (Vite) client
-
-The first build may take a few minutes.
-
-
-### 4. Access the application
-
-Once running:
-- Client: http://localhost:5173
-- Server API: http://localhost:8000
-- Server health check: http://localhost:8000/healthz
-- API version ping: http://localhost:8000/api/v1/ping
-
-If all services are running, you should see JSON responses from the health and ping endpoints.
-
-### 5. Running tests
-Tests are executed inside the server container.
-
-After starting the Docker container as per above, run:
-
-#### Server Tests:
-```
-docker compose exec server pytest
-```
-
-Expected output:
-```
-1 passed
-```
-
-#### Client Tests:
-```
-cd client
-npm test
-```
-
-#### End-to-End (optional):
-```
-npm run e2e
-```
-
-
-### 6. Stopping the environment
-
-To stop the containers:
-
-```
-docker compose down
-```
-
+- [Product Vision](docs/product-vision.md)
+- [Product Plan](docs/product-plan.md)
+- [Requirements Doc](docs/requirements.md)
+- [Requirements Tracability Matrix](docs/requirements-tracability-matrix.md)
 ---
 
 ## Motivation
@@ -203,17 +113,107 @@ README.md
 
 ## Security & Data Ethics
 
-Passwords are securely hashed (argon2/bcrypt)
+- Passwords are securely hashed (argon2/bcrypt)
+- JWT-based authentication with role-based access control
+- Uses synthetic data only
+- Not HIPAA-compliant (educational/portfolio project)
 
-JWT-based authentication with role-based access control
+---
+## Getting Started (Local Development)
 
-Uses synthetic data only
+This project uses Docker Compose to provide a consistent local development environment.
 
-Not HIPAA-compliant (educational/portfolio project)
+Make sure you have the following installed:
+- Docker Desktop
+- Docker Compose (included with Docker Desktop)
+- Git
 
-Future work would include encryption at rest, audit trails, and compliance workflows.
 
-## Documentation:
+### 1. Clone the repository
 
-- [Product Vision](docs/product-vision.md)
-- [Product Plan](docs/product-plan.md)
+```
+git clone https://github.com/ehhurst/mcat-app.git
+```
+```
+cd mcat-app
+```
+
+
+### 2. Environment variables
+
+This project uses environment variables for configuration.
+Copy the example environment file:
+
+```
+cp .env.example .env
+```
+
+Update values in .env if needed (defaults work for local development).
+
+### 3. Start the development environment
+
+From the repository root, run:
+
+```
+docker compose up --build
+```
+or
+```
+docker compose up --build -d
+```
+
+This will start:
+* PostgreSQL database
+* FastAPI server
+* React (Vite) client
+
+The first build may take a few minutes.
+
+
+### 4. Access the application
+
+Once running:
+- Client: http://localhost:5173
+- Server API: http://localhost:8000
+- Server health check: http://localhost:8000/healthz
+- API version ping: http://localhost:8000/api/v1/ping
+
+If all services are running, you should see JSON responses from the health and ping endpoints.
+
+### 5. Running tests
+Tests are executed inside the server container.
+
+After starting the Docker container as per above, run:
+
+#### Server Tests:
+```
+docker compose exec server pytest
+```
+
+Expected output:
+```
+1 passed
+```
+
+#### Client Tests:
+```
+cd client
+npm test
+```
+
+#### End-to-End (optional):
+```
+npm run e2e
+```
+
+
+### 6. Stopping the environment
+
+To stop the containers:
+
+```
+docker compose down
+```
+
+
+
