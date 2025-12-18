@@ -29,6 +29,12 @@ cd mcat-app
 2. Run `docker compose up --build`
 3. Open http://localhost:5173
 
+## To stop the docker container
+
+```
+docker compose down
+```
+
 ### Testing
 
 Start docker container:
