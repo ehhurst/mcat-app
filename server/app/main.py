@@ -3,7 +3,7 @@ from app.api.router import api_router
 
 app = FastAPI(title="MCAT Access Platform API")
 
-@app.get("/healthz")
+@app.get("/healthcheck")
 def healthz():
     return {"status": "ok"}
 
