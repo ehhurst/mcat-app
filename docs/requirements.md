@@ -80,99 +80,72 @@ All components must be runnable locally with a single command.
    - FR-12 Study plans shall be stored persistently.
    - FR-13 Plans shall consist of individual scheduled study tasks.
 
-5.4 Scheduling & Flexibility
+* 5.4 Scheduling & Flexibility
+   - FR-14 Users shall be able to view their study plan in a calendar or schedule format.
+   - FR-15 Users shall be able to drag and drop study tasks to different days.
+   - FR-16 When a task is moved, the updated schedule shall be saved automatically.
+   - FR-17 Users shall be able to reschedule missed tasks without regenerating the entire plan.
 
-FR-14 Users shall be able to view their study plan in a calendar or schedule format.
-FR-15 Users shall be able to drag and drop study tasks to different days.
-FR-16 When a task is moved, the updated schedule shall be saved automatically.
-FR-17 Users shall be able to reschedule missed tasks without regenerating the entire plan.
+* 5.5 Client–Server Interaction
+   - FR-18 The client shall retrieve study plans from the server via API calls.
+   - FR-19 The client shall update study plans via authenticated API requests.
+   - FR-20 The client shall handle API errors gracefully and display meaningful feedback.
 
-5.5 Client–Server Interaction
 
-FR-18 The client shall retrieve study plans from the server via API calls.
-FR-19 The client shall update study plans via authenticated API requests.
-FR-20 The client shall handle API errors gracefully and display meaningful feedback.
+## 6. Non-Functional Requirements
+- 6.1 Usability
+   - NFR-1 The UI shall be simple and distraction-free.
+   - NFR-2 Core workflows (view plan, reschedule task) shall require minimal clicks.
+   - NFR-3 The interface shall be usable on standard laptop screen sizes.
 
-6. Non-Functional Requirements
-   6.1 Usability
+- 6.2 Performance
+   - NFR-4 API responses for plan retrieval shall complete within reasonable time for local development.
+   - NFR-5 Drag-and-drop interactions shall feel responsive.
 
-NFR-1 The UI shall be simple and distraction-free.
-NFR-2 Core workflows (view plan, reschedule task) shall require minimal clicks.
-NFR-3 The interface shall be usable on standard laptop screen sizes.
+- 6.3 Security
+   - NFR-6 Passwords shall never be stored in plaintext.
+   - NFR-7 Authentication tokens shall be securely generated and validated.
+   - NFR-8 Sensitive configuration values shall not be committed to source control.
 
-6.2 Performance
+- 6.4 Maintainability
+   - NFR-9 The server codebase shall follow a modular structure:
+        - api for routes
+        - services for business logic
+        - models for database models
+        - schemas for request/response validation
+   - NFR-10 The system shall support database migrations via Alembic.
+   - NFR-11 The project shall include basic automated tests.
 
-NFR-4 API responses for plan retrieval shall complete within reasonable time for local development.
-NFR-5 Drag-and-drop interactions shall feel responsive.
+- 6.5 Developer Experience
+   - NFR-12 The entire system shall be runnable locally using:
+        - docker compose up --build
+   - NFR-13 Health checks shall exist for server and database services.
+   - NFR-14 Clear documentation shall exist for setup and contribution.
 
-6.3 Security
 
-NFR-6 Passwords shall never be stored in plaintext.
-NFR-7 Authentication tokens shall be securely generated and validated.
-NFR-8 Sensitive configuration values shall not be committed to source control.
+## 7. Constraints
+- The system must support user-chosen study content, not proprietary content redistribution.
+- The project must remain feasible for a solo developer over a limited timeline.
+- The system must prioritize flexibility over rigid schedules.
 
-6.4 Maintainability
 
-NFR-9 The server codebase shall follow a modular structure:
+## 8. Assumptions
+- Users have access to at least some study materials.
+- Users may miss study days and need easy rescheduling.
+- The platform is primarily used during MCAT preparation windows (weeks to months).
 
-api for routes
+## 9. Future Enhancements (Non-Required)
+- Anki deck import/export support
+- Analytics on study consistency
+- Multi-device sync
+- Mobile-friendly UI
+- Advisor or mentor dashboards
 
-services for business logic
 
-models for database models
-
-schemas for request/response validation
-
-NFR-10 The system shall support database migrations via Alembic.
-NFR-11 The project shall include basic automated tests.
-
-6.5 Developer Experience
-
-NFR-12 The entire system shall be runnable locally using:
-
-docker compose up --build
-
-NFR-13 Health checks shall exist for server and database services.
-NFR-14 Clear documentation shall exist for setup and contribution.
-
-7. Constraints
-
-The system must support user-chosen study content, not proprietary content redistribution.
-
-The project must remain feasible for a solo developer over a limited timeline.
-
-The system must prioritize flexibility over rigid schedules.
-
-8. Assumptions
-
-Users have access to at least some study materials.
-
-Users may miss study days and need easy rescheduling.
-
-The platform is primarily used during MCAT preparation windows (weeks to months).
-
-9. Future Enhancements (Non-Required)
-
-Anki deck import/export support
-
-Analytics on study consistency
-
-Multi-device sync
-
-Mobile-friendly UI
-
-Advisor or mentor dashboards
-
-10. Definition of Success
-
+## 10. Definition of Success
 The project is considered successful if:
-
-A user can create an account
-
-Add their own study resources
-
-Generate a personalized study plan
-
-Adjust that plan dynamically as life changes
-
-Run the full system locally with minimal setup
+- A user can create an account
+- Add their own study resources
+- Generate a personalized study plan
+- Adjust that plan dynamically as life changes
+- Run the full system locally with minimal setup
