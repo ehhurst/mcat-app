@@ -184,7 +184,7 @@ The first build may take a few minutes.
 Once running:
 - Client: http://localhost:5173
 - Server API: http://localhost:8000
-- Server health check: http://localhost:8000/healthz
+- Server health check: http://localhost:8000/healthcheck
 - API version ping: http://localhost:8000/api/v1/ping
 
 If all services are running, you should see JSON responses from the health and ping endpoints.
