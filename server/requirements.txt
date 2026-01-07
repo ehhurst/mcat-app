@@ -8,10 +8,13 @@ psycopg[binary]
 # Auth / security
 python-jose[cryptography]
 passlib[bcrypt]
+python-multipart
 
 # Settings
 pydantic
 python-dotenv
+pydantic-settings
+
 
 # Migrations (Sprint 0 setup, used Sprint 1)
 alembic
